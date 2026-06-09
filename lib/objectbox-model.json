@@ -1,0 +1,262 @@
+{
+  "_note1": "KEEP THIS FILE! Check it into a version control system (VCS) like git.",
+  "_note2": "ObjectBox manages crucial IDs for your object model. See docs for details.",
+  "_note3": "If you have VCS merge conflicts, you must resolve them according to ObjectBox docs.",
+  "entities": [
+    {
+      "id": "1:2663016188176459942",
+      "lastPropertyId": "7:3644725006481386194",
+      "name": "CustomerEntity",
+      "properties": [
+        {
+          "id": "1:1307233880966763254",
+          "name": "id",
+          "type": 6,
+          "flags": 1
+        },
+        {
+          "id": "2:328166366318766191",
+          "name": "remoteId",
+          "indexId": "1:6130055082996551324",
+          "type": 9,
+          "flags": 2080
+        },
+        {
+          "id": "3:201049710319201889",
+          "name": "tenantId",
+          "type": 9
+        },
+        {
+          "id": "4:8264429249342573298",
+          "name": "name",
+          "type": 9
+        },
+        {
+          "id": "5:4332120428958898688",
+          "name": "phone",
+          "type": 9
+        },
+        {
+          "id": "6:4928503661416413075",
+          "name": "pricingTier",
+          "type": 9
+        },
+        {
+          "id": "7:3644725006481386194",
+          "name": "currentDebt",
+          "type": 8
+        }
+      ],
+      "relations": []
+    },
+    {
+      "id": "2:5531137623161034724",
+      "lastPropertyId": "8:8187994674395658089",
+      "name": "InvoiceEntity",
+      "properties": [
+        {
+          "id": "1:8531954259554273812",
+          "name": "id",
+          "type": 6,
+          "flags": 1
+        },
+        {
+          "id": "2:1944761609547070821",
+          "name": "ulid",
+          "indexId": "2:2309866534840227857",
+          "type": 9,
+          "flags": 2080
+        },
+        {
+          "id": "3:1779048161110390798",
+          "name": "tenantId",
+          "type": 9
+        },
+        {
+          "id": "4:8966052436897499191",
+          "name": "customerId",
+          "type": 9
+        },
+        {
+          "id": "5:1479551716555940207",
+          "name": "totalAmount",
+          "type": 8
+        },
+        {
+          "id": "6:6837670407634145275",
+          "name": "paymentMode",
+          "type": 9
+        },
+        {
+          "id": "7:4900072845697448333",
+          "name": "createdAtLocal",
+          "type": 10
+        },
+        {
+          "id": "8:8187994674395658089",
+          "name": "isSynced",
+          "type": 1
+        }
+      ],
+      "relations": []
+    },
+    {
+      "id": "3:6182633476752569592",
+      "lastPropertyId": "10:4946975983553551052",
+      "name": "ItemEntity",
+      "properties": [
+        {
+          "id": "1:124136014019064196",
+          "name": "id",
+          "type": 6,
+          "flags": 1
+        },
+        {
+          "id": "2:6218674716298404177",
+          "name": "remoteId",
+          "indexId": "3:2658613417335108708",
+          "type": 9,
+          "flags": 2080
+        },
+        {
+          "id": "3:4226361321943184404",
+          "name": "tenantId",
+          "type": 9
+        },
+        {
+          "id": "4:2982055017369438240",
+          "name": "barcode",
+          "type": 9
+        },
+        {
+          "id": "5:2434470281846534600",
+          "name": "nameTranslationsJson",
+          "type": 9
+        },
+        {
+          "id": "6:7327928155076290722",
+          "name": "pricesJson",
+          "type": 9
+        },
+        {
+          "id": "7:3667995968499113522",
+          "name": "qtyInStock",
+          "type": 8
+        },
+        {
+          "id": "8:4935041455890771306",
+          "name": "isActive",
+          "type": 1
+        },
+        {
+          "id": "9:6561166034912542433",
+          "name": "isSynced",
+          "type": 1
+        },
+        {
+          "id": "10:4946975983553551052",
+          "name": "updatedAt",
+          "type": 10
+        }
+      ],
+      "relations": []
+    },
+    {
+      "id": "4:1691670028453853020",
+      "lastPropertyId": "6:4298721453911347209",
+      "name": "LineItemEntity",
+      "properties": [
+        {
+          "id": "1:4081969096602119770",
+          "name": "id",
+          "type": 6,
+          "flags": 1
+        },
+        {
+          "id": "2:579018565911227918",
+          "name": "itemId",
+          "type": 9
+        },
+        {
+          "id": "3:4833165145563910357",
+          "name": "qty",
+          "type": 8
+        },
+        {
+          "id": "4:6744700554683913424",
+          "name": "unitPrice",
+          "type": 8
+        },
+        {
+          "id": "5:1279993070822374773",
+          "name": "pricingTier",
+          "type": 9
+        },
+        {
+          "id": "6:4298721453911347209",
+          "name": "invoiceId",
+          "indexId": "4:3494718874245362246",
+          "type": 11,
+          "flags": 520,
+          "relationTarget": "InvoiceEntity"
+        }
+      ],
+      "relations": []
+    },
+    {
+      "id": "5:1546742219701097604",
+      "lastPropertyId": "7:7284872886200148576",
+      "name": "PendingSyncEntity",
+      "properties": [
+        {
+          "id": "1:8096487438430823563",
+          "name": "id",
+          "type": 6,
+          "flags": 1
+        },
+        {
+          "id": "2:4962537839812333434",
+          "name": "entityType",
+          "type": 9
+        },
+        {
+          "id": "3:4924592195932122149",
+          "name": "entityUlid",
+          "type": 9
+        },
+        {
+          "id": "4:7848399513680375486",
+          "name": "retryCount",
+          "type": 6
+        },
+        {
+          "id": "5:3023898745587912242",
+          "name": "createdAt",
+          "type": 10
+        },
+        {
+          "id": "6:7001571526103358697",
+          "name": "lastAttemptAt",
+          "type": 10
+        },
+        {
+          "id": "7:7284872886200148576",
+          "name": "lastError",
+          "type": 9
+        }
+      ],
+      "relations": []
+    }
+  ],
+  "lastEntityId": "5:1546742219701097604",
+  "lastIndexId": "4:3494718874245362246",
+  "lastRelationId": "0:0",
+  "lastSequenceId": "0:0",
+  "modelVersion": 5,
+  "modelVersionParserMinimum": 5,
+  "retiredEntityUids": [],
+  "retiredIndexUids": [],
+  "retiredPropertyUids": [],
+  "retiredRelationUids": [],
+  "version": 1
+}
